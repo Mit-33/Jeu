@@ -7,9 +7,9 @@ void Object::update(Ground &ground) {}
 void Object::respawn(Ground &ground) {
     int dpos[2];
     srand((int)time(NULL));
-    dpos[0] = rand()%ground.WIDTH;
+    dpos[0] = rand()%ground.getWidth();
 
     srand((int)(time(NULL)*2));
-    dpos[1] = rand()%ground.HEIGHT;
+    dpos[1] = rand()%ground.getHeight();
     moveto(dpos);
 }

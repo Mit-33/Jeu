@@ -7,7 +7,7 @@ bool MoveDraw::confirm(Ground &ground,int coords[]) {
     int dx = pos[0] + coords[0];
     int dy = pos[1] + coords[1];
 
-    if (dx >= 0 && dx < ground.HEIGHT && dy >= 0 && dy < ground.WIDTH) {
+    if (dx >= 0 && dx < ground.getWidth() && dy >= 0 && dy < ground.getHeight()) {
         return true;
     }
     return false;
@@ -19,7 +19,7 @@ bool MoveDraw::confirm(Ground &ground,array<int,2> coords) {
     int dx = pos[0] + coords[0];
     int dy = pos[1] + coords[1];
     
-    if (dx >= 0 && dx < ground.HEIGHT && dy >= 0 && dy < ground.WIDTH) {
+    if (dx >= 0 && dx < ground.getWidth() && dy >= 0 && dy < ground.getHeight()) {
         return true;
     }
     return false;

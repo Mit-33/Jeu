@@ -1,6 +1,7 @@
 #ifndef GROUND_DEF
 #define GROUND_DEF
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Ground {
@@ -8,17 +9,24 @@ class Ground {
 
     private:
     string **mat;
-    const char OPENCHAR = '[';
-    const char CLOSECHAR = ']';
+    char OPENCHAR;
+    char CLOSECHAR;
+    int WIDTH;
+    int HEIGHT;
     
     //void draw(char img,int pos[2]);
     void draw(char img,int pos[]);
     
     public:
-    const int WIDTH = 5;
-    const int HEIGHT = 5;
 
-    Ground() {
+    Ground(int width,int height) : Ground(width,height,'[',']') {}
+
+    Ground(int width,int height,char openchar,char closechar) {
+        OPENCHAR = openchar;
+        CLOSECHAR = closechar;
+        WIDTH = width;
+        HEIGHT = height;
+
         mat = new string*[HEIGHT];
         for (int y=0; y < HEIGHT; y++) {
             mat[y] = new string[WIDTH];
@@ -28,6 +36,10 @@ class Ground {
             }
         }
     }
+
+    int getWidth() const {return WIDTH;}
+
+    int getHeight() const {return HEIGHT;}
 
     void clear();
 

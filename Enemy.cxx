@@ -9,7 +9,7 @@ void Enemy::update(Ground &ground) {
     if (confirm(ground,move)) {
         this->move(move);
     } else {
-        if (pos[0]+1 >= ground.HEIGHT) {
+        if (pos[0]+1 >= ground.getHeight()) {
             dx = -1;
         } else if (pos[0] <= 0) {
             dx = 1;

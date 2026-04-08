@@ -9,7 +9,7 @@ using namespace std;
 #include "Object.h"
 
 int main() {
-    Ground ground;
+    Ground ground(5,5);
     Player player(2,2);
 
     Enemy enemys[1] = {Enemy(0,2)};
