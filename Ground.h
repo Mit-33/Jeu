@@ -41,6 +41,8 @@ class Ground {
 
     int getHeight() const {return HEIGHT;}
 
+    string getAt(int x,int y);
+
     void clear();
 
     string str();

@@ -16,6 +16,14 @@ string Ground::str() {
     return val;
 }
 
+string Ground::getAt(int x,int y) {
+    if (x < WIDTH && y < HEIGHT) {
+        return mat[y][x];
+    } else {
+        return string();
+    }
+}
+
 /*
 void Ground::draw(char img,int pos[2]) {
     char val[4] = {OPENCHAR,img,CLOSECHAR,0};
